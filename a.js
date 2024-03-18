@@ -1,19 +1,17 @@
-// Given a string s consisting of words and spaces, return the length of the last word in the string.
+// Given a square matrix mat, return the sum of the matrix diagonals.
 
-// A word is a maximal 
-// substring
-//  consisting of non-space characters only.
+// Only include the sum of all the elements on the primary diagonal and all the elements on the secondary diagonal that are not part of the primary diagonal.
 
- 
+let mat = [[1,2,3],
+              [4,5,6],
+              [7,8,9]]
 
-// Example 1:
-
-// Input: s = "Hello World"
-// Output: 5
-// Explanation: The last word is "World" with length 5.
-let s = "Hello World"
-s=s.trim();
-  let val= s.split(" ");
- let res=(val[val.length-1])
- let out=res.length;
- return out;
+              let sum=0;
+              for(let i=0;i<mat.length;i++){
+                  for(let j=0;j<mat.length;j++){
+                      if(i==j || i+j== mat.length-1 ){
+                          sum+=mat[i][j];
+                      }
+                  }
+              }
+              return(sum)
